@@ -3,5 +3,5 @@
   <li><a href="{{ root_url }}/">段子 | Blogging</a></li>
   <li><a href="{{ root_url }}/about">藏♥品 | Reading</a><li>
   <li><a href="{{ root_url }}/about">玩意儿 | Coding</a><li>
-
+  <li><a href="{{ root_url }}/about">段子 | Playing</a><li>
 </ul>
