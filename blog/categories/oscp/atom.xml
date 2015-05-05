@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[F4l13n5n0w]]></title>
-  <link href="http://f4l13n5n0w.github.io/atom.xml" rel="self"/>
+  <title><![CDATA[Category: Oscp | F4l13n5n0w]]></title>
+  <link href="http://f4l13n5n0w.github.io/blog/categories/oscp/atom.xml" rel="self"/>
   <link href="http://f4l13n5n0w.github.io/"/>
   <updated>2015-05-05T09:06:04-04:00</updated>
   <id>http://f4l13n5n0w.github.io/</id>
@@ -18,7 +18,7 @@
     <link href="http://f4l13n5n0w.github.io/blog/2015/05/05/jing-yan-fen-xiang-oscp-shen-tou-ce-shi-ren-zheng/"/>
     <updated>2015-05-05T06:48:31-04:00</updated>
     <id>http://f4l13n5n0w.github.io/blog/2015/05/05/jing-yan-fen-xiang-oscp-shen-tou-ce-shi-ren-zheng</id>
-    <content type="html"><![CDATA[<p><img class="center" src="http://f4l13n5n0w.github.io/downloads/oscp-certs.png" width="250" height="150">
+    <content type="html"><![CDATA[<p><img class="center" src="/downloads/oscp-certs.png" width="250" height="150">
 “120天的旅程即将结束，以一场历时24小时没有选择题的考试，收获屠龙路上第一座里程碑。…” 这是我通过OSCP认证考试时，第一时间的感受。自豪和欣喜之情不亚于2008年我拿下CCIE R&amp;S的时候。
 关于 PWK (Pentesting with Kali Linux) 和OSCP (Offensive Security Certified Professional)，我想很多人会觉着陌生。但说起Offensive Security，BackTrack，Kali，NetHunter和Metasploit，圈里的朋友应该就熟悉多了。</p>
 
@@ -82,7 +82,7 @@
 
 <p>过了一天，收到了下边的邮件，写下了开头的那句话。</p>
 
-<p><img class="center" src="http://f4l13n5n0w.github.io/downloads/oscp.png">
+<p><img class="center" src="/downloads/oscp.png">
 最后，感谢IRC里的admin们和所有聊过天，帮助过我的朋友：</p>
 
 <ul style="list-style-type:disc">

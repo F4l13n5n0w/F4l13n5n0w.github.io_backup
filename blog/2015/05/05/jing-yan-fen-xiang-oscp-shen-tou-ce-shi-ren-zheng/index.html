@@ -1,24 +1,94 @@
-<?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[F4l13n5n0w]]></title>
-  <link href="http://f4l13n5n0w.github.io/atom.xml" rel="self"/>
-  <link href="http://f4l13n5n0w.github.io/"/>
-  <updated>2015-05-05T09:06:04-04:00</updated>
-  <id>http://f4l13n5n0w.github.io/</id>
-  <author>
-    <name><![CDATA[F4l13n5n0w]]></name>
-    
-  </author>
-  <generator uri="http://octopress.org/">Octopress</generator>
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>[经验分享] OSCP 渗透测试认证 - F4l13n5n0w</title>
+  <meta name="author" content="F4l13n5n0w">
 
   
-  <entry>
-    <title type="html"><![CDATA[[经验分享] OSCP 渗透测试认证]]></title>
-    <link href="http://f4l13n5n0w.github.io/blog/2015/05/05/jing-yan-fen-xiang-oscp-shen-tou-ce-shi-ren-zheng/"/>
-    <updated>2015-05-05T06:48:31-04:00</updated>
-    <id>http://f4l13n5n0w.github.io/blog/2015/05/05/jing-yan-fen-xiang-oscp-shen-tou-ce-shi-ren-zheng</id>
-    <content type="html"><![CDATA[<p><img class="center" src="http://f4l13n5n0w.github.io/downloads/oscp-certs.png" width="250" height="150">
+  <meta name="description" content="“120天的旅程即将结束，以一场历时24小时没有选择题的考试，收获屠龙路上第一座里程碑。…” 这是我通过OSCP认证考试时，第一时间的感受。自豪和欣喜之情不亚于2008年我拿下CCIE R&amp;S的时候。
+关于 PWK (Pentesting with Kali Linux) 和OSCP ( &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://f4l13n5n0w.github.io/blog/2015/05/05/jing-yan-fen-xiang-oscp-shen-tou-ce-shi-ren-zheng/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="F4l13n5n0w" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="/javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">F4l13n5n0w</a></h1>
+  
+    <h2>Security & Pen testing learning notes &#8211; F4l13n5n0w.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="sitesearch" value="f4l13n5n0w.github.io">
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+
+  <li><a href="/">段子 | Blogging</a></li>
+  <li><a href="/about">藏♥品 | Reading</a><li>
+  <li><a href="/about">玩意儿 | Coding</a><li>
+
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">[经验分享] OSCP 渗透测试认证</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2015-05-05T06:48:31-04:00'><span class='date'><span class='date-month'>May</span> <span class='date-day'>5</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>6:48 am</span></time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p><img class="center" src="/downloads/oscp-certs.png" width="250" height="150">
 “120天的旅程即将结束，以一场历时24小时没有选择题的考试，收获屠龙路上第一座里程碑。…” 这是我通过OSCP认证考试时，第一时间的感受。自豪和欣喜之情不亚于2008年我拿下CCIE R&amp;S的时候。
 关于 PWK (Pentesting with Kali Linux) 和OSCP (Offensive Security Certified Professional)，我想很多人会觉着陌生。但说起Offensive Security，BackTrack，Kali，NetHunter和Metasploit，圈里的朋友应该就熟悉多了。</p>
 
@@ -82,7 +152,7 @@
 
 <p>过了一天，收到了下边的邮件，写下了开头的那句话。</p>
 
-<p><img class="center" src="http://f4l13n5n0w.github.io/downloads/oscp.png">
+<p><img class="center" src="/downloads/oscp.png">
 最后，感谢IRC里的admin们和所有聊过天，帮助过我的朋友：</p>
 
 <ul style="list-style-type:disc">
@@ -104,7 +174,112 @@
 <li><a href='https://blog.g0tmi1k.com/2011/08/basic-linux-privilege-escalation/'>Basic Linux Privilege Escalation</a></li>
 <li><a href='http://netsec.ws/?p=331'>Creating Metasploit Payloads</a></li>
 <li><a href='https://sathisharthars.wordpress.com/2015/01/28/oscp-offensive-security-certified-professional-handy-tips-and-tricks/'>OSCP Handy Tips and Tricks</a></li></p>
-]]></content>
-  </entry>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
   
-</feed>
+
+<span class="byline author vcard">Posted by <span class="fn">F4l13n5n0w</span></span>
+
+      
+
+
+
+
+<time class='entry-date' datetime='2015-05-05T06:48:31-04:00'><span class='date'><span class='date-month'>May</span> <span class='date-day'>5</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>6:48 am</span></time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/oscp/'>oscp</a>, <a class='category' href='/blog/categories/pwk/'>pwk</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://f4l13n5n0w.github.io/blog/2015/05/05/jing-yan-fen-xiang-oscp-shen-tou-ce-shi-ren-zheng/" data-via="" data-counturl="http://f4l13n5n0w.github.io/blog/2015/05/05/jing-yan-fen-xiang-oscp-shen-tou-ce-shi-ren-zheng/" >Tweet</a>
+  
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
+</div>
+
+    
+    <p class="meta">
+      
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2015/05/05/jing-yan-fen-xiang-oscp-shen-tou-ce-shi-ren-zheng/">[经验分享] OSCP 渗透测试认证</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2015 - F4l13n5n0w -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id; js.async = true;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>
