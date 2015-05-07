@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Bash Bag | F4l13n5n0w]]></title>
   <link href="http://f4l13n5n0w.github.io/blog/categories/bash-bag/atom.xml" rel="self"/>
   <link href="http://f4l13n5n0w.github.io/"/>
-  <updated>2015-05-07T09:23:41-04:00</updated>
+  <updated>2015-05-07T09:47:59-04:00</updated>
   <id>http://f4l13n5n0w.github.io/</id>
   <author>
     <name><![CDATA[F4l13n5n0w]]></name>
@@ -94,6 +94,15 @@
 <p><img src="/downloads/shellshock/5.png"></p>
 
 <p>Game over :)</p>
+
+<h2>Reference</h2>
+
+
+<p>For more information about shell shock/bash bug, the following links have already given out good explaination.</p>
+
+<p>[1] <a href="http://www.symantec.com/connect/blogs/shellshock-all-you-need-know-about-bash-bug-vulnerability">http://www.symantec.com/connect/blogs/shellshock-all-you-need-know-about-bash-bug-vulnerability</a><br>
+[2] <a href="http://security.stackexchange.com/questions/68122/what-is-a-specific-example-of-how-the-shellshock-bash-bug-could-be-exploited">http://security.stackexchange.com/questions/68122/what-is-a-specific-example-of-how-the-shellshock-bash-bug-could-be-exploited</a><br>
+[3] <a href="https://blog.cloudflare.com/inside-shellshock/">https://blog.cloudflare.com/inside-shellshock/</a><br></p>
 ]]></content>
   </entry>
   
