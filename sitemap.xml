@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://f4l13n5n0w.github.io/blog/2015/05/07/pentesterlab-cve-2014-6271-slash-shellshock/</loc>
+    <lastmod>2015-05-07T07:33:16-04:00</lastmod>
+  </url>
+  <url>
     <loc>http://f4l13n5n0w.github.io/blog/2015/05/05/jing-yan-fen-xiang-oscp-shen-tou-ce-shi-ren-zheng/</loc>
     <lastmod>2015-05-05T06:48:31-04:00</lastmod>
   </url>
@@ -18,5 +22,14 @@
   </url>
   <url>
     <loc>http://f4l13n5n0w.github.io/blog/categories/pwk/</loc>
+  </url>
+  <url>
+    <loc>http://f4l13n5n0w.github.io/blog/categories/pentesterlab/</loc>
+  </url>
+  <url>
+    <loc>http://f4l13n5n0w.github.io/blog/categories/shellshock/</loc>
+  </url>
+  <url>
+    <loc>http://f4l13n5n0w.github.io/blog/categories/bash-bag/</loc>
   </url>
 </urlset>
