@@ -4,7 +4,7 @@
   <title><![CDATA[F4l13n5n0w]]></title>
   <link href="http://f4l13n5n0w.github.io/atom.xml" rel="self"/>
   <link href="http://f4l13n5n0w.github.io/"/>
-  <updated>2015-05-08T00:34:48-04:00</updated>
+  <updated>2015-05-08T00:46:45-04:00</updated>
   <id>http://f4l13n5n0w.github.io/</id>
   <author>
     <name><![CDATA[F4l13n5n0w]]></name>
@@ -18,7 +18,7 @@
     <link href="http://f4l13n5n0w.github.io/blog/2015/05/07/pentesterlab-cve-2014-6271-slash-shellshock/"/>
     <updated>2015-05-07T07:33:16-04:00</updated>
     <id>http://f4l13n5n0w.github.io/blog/2015/05/07/pentesterlab-cve-2014-6271-slash-shellshock</id>
-    <content type="html"><![CDATA[<p>This is an exercise from <a href='https://www.pentesterlab.com/'>PentesterLab</a> to reproduce &amp; demonstrate how to exploit CVE-2014-6271 [Shellshock] vulnerability. More information please check <a href='https://www.pentesterlab.com/exercises/cve-2014-6271'>here</a>.</p>
+    <content type="html"><![CDATA[<p>This is an exercise from <a href='https://www.pentesterlab.com/'>PentesterLab</a> to reproduce &amp; demonstrate how to exploit CVE-2014-6271 [Shellshock] vulnerability. More information and ISO download please check <a href='https://www.pentesterlab.com/exercises/cve-2014-6271'>here</a>. The <a href='https://www.pentesterlab.com/exercises/cve-2014-6271/course'>official course</a> is highly recommanded to read, which explains how the bug works and the ways to exploit it for different purposes.</p>
 
 <p>Difficaulty: 1 / 5</p>
 
@@ -50,10 +50,10 @@
 <p>All the tools used here can be found in Kali Linux</p>
 
 <ul style="list-style-type:disc">
-<li>Net Discover</li>
-<li>Nmap</li>
-<li>Firefox</li>
-<li>nc</li>
+<li><a href='http://nixgeneration.com/~jaime/netdiscover/'>Net Discover</a></li>
+<li><a href='https://nmap.org/'>Nmap</a></li>
+<li><a href='https://www.mozilla.org/en-US/firefox/new/'>Firefox</a></li>
+<li><a href='http://netcat.sourceforge.net/'>nc</a></li>
 </ul>
 
 
