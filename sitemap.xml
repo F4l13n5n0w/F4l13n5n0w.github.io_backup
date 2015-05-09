@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://f4l13n5n0w.github.io/blog/2015/05/09/pentesterlab-play-session-injection/</loc>
+    <lastmod>2015-05-09T07:34:13-04:00</lastmod>
+  </url>
+  <url>
     <loc>http://f4l13n5n0w.github.io/blog/2015/05/09/pentesterlab-xss-and-mysql-file/</loc>
     <lastmod>2015-05-09T01:28:19-04:00</lastmod>
   </url>
@@ -41,5 +45,11 @@
   </url>
   <url>
     <loc>http://f4l13n5n0w.github.io/blog/categories/mysql-injection/</loc>
+  </url>
+  <url>
+    <loc>http://f4l13n5n0w.github.io/blog/categories/play-framework/</loc>
+  </url>
+  <url>
+    <loc>http://f4l13n5n0w.github.io/blog/categories/session-injection/</loc>
   </url>
 </urlset>
