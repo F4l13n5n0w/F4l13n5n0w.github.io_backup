@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://f4l13n5n0w.github.io/blog/2015/05/25/vulnhub-kioptrix-2014/</loc>
+    <lastmod>2015-05-25T00:54:33-04:00</lastmod>
+  </url>
+  <url>
     <loc>http://f4l13n5n0w.github.io/blog/2015/05/23/pentesterlab-web-for-pentester-final/</loc>
     <lastmod>2015-05-23T00:52:14-04:00</lastmod>
   </url>
@@ -85,5 +89,11 @@
   </url>
   <url>
     <loc>http://f4l13n5n0w.github.io/blog/categories/xml-injection/</loc>
+  </url>
+  <url>
+    <loc>http://f4l13n5n0w.github.io/blog/categories/vulnhub/</loc>
+  </url>
+  <url>
+    <loc>http://f4l13n5n0w.github.io/blog/categories/kioptrix2014/</loc>
   </url>
 </urlset>
