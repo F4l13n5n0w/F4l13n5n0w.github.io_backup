@@ -187,7 +187,7 @@
 
 <p>After access 8080 again with new User-Agent Header, I found the web application &ldquo;phptax&rdquo; in URL: <code>http://10.10.10.132:8080/phptax/</code>. Then I searched &ldquo;phptax exploit&rdquo; in google and found the <a href="https://www.exploit-db.com/exploits/21665/">Remote Code Execution vulnerability</a>.</p>
 
-<p>Due to this is FreeBSD system, the nc reverse shell could not work, so I have to find other ways. I set up <a href="http://pentestmonkey.net/tools/web-shells/php-reverse-shell">php-reverse-shell</a> and FTP server on my Kali, then exploit remote code execution vulnerability to upload my php reverse shell (sh.php) to the target.</p>
+<p>Due to this is FreeBSD system (the OSCP studying experences very helpful here :P), the nc reverse shell could not work, so I have to find other ways. I set up <a href="http://pentestmonkey.net/tools/web-shells/php-reverse-shell">php-reverse-shell</a> and FTP server on my Kali, then exploit remote code execution vulnerability to upload my php reverse shell (sh.php) to the target.</p>
 
 <p>PoC:</p>
 
