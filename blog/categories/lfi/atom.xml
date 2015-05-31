@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Lfi | F4l13n5n0w]]></title>
   <link href="http://f4l13n5n0w.github.io/blog/categories/lfi/atom.xml" rel="self"/>
   <link href="http://f4l13n5n0w.github.io/"/>
-  <updated>2015-05-31T03:43:18-04:00</updated>
+  <updated>2015-05-31T05:45:23-04:00</updated>
   <id>http://f4l13n5n0w.github.io/</id>
   <author>
     <name><![CDATA[F4l13n5n0w]]></name>
@@ -20,7 +20,7 @@
     <id>http://f4l13n5n0w.github.io/blog/2015/05/30/pentesterlab-axis2-web-service-and-tomcat-manager</id>
     <content type="html"><![CDATA[<p>&ldquo;This course details the exploitation of an issue in an Axis2 Web service and how using this issue it is possible to retrieve arbitrary files. Then using this, we will see how an attacker can retrieve Tomcat users&#8217; file to access the Tomcat Manager and gain commands execution on the server.&rdquo; &ndash; <font color="green"><em>PentesterLab</em></font></p>
 
-<p>More information and ISO download please check <a href="https://www.pentesterlab.com/exercises/web_for_pentester/">here</a>. The official <a href="https://www.pentesterlab.com/exercises/web_for_pentester/course">course</a> is highly recommanded to read.</p>
+<p>More information and ISO download please check <a href="https://www.pentesterlab.com/exercises/axis2_and_tomcat_manager/">here</a>. The official <a href="https://www.pentesterlab.com/exercises/axis2_and_tomcat_manager/course">course</a> is highly recommanded to read.</p>
 
 <p>Difficulty: 3 / 5</p>
 
