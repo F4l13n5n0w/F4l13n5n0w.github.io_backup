@@ -1,68 +1,72 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://f4l13n5n0w.github.io/blog/2015/08/18/vulnhub-nullbyte-1/</loc>
+    <lastmod>2015-08-18T23:12:46+10:00</lastmod>
+  </url>
+  <url>
     <loc>http://f4l13n5n0w.github.io/blog/2015/07/17/vulnhub-hell-1/</loc>
-    <lastmod>2015-07-17T00:01:30-04:00</lastmod>
+    <lastmod>2015-07-17T14:01:30+10:00</lastmod>
   </url>
   <url>
     <loc>http://f4l13n5n0w.github.io/blog/2015/07/07/vulnhub-sokar-1/</loc>
-    <lastmod>2015-07-07T02:41:59-04:00</lastmod>
+    <lastmod>2015-07-07T16:41:59+10:00</lastmod>
   </url>
   <url>
     <loc>http://f4l13n5n0w.github.io/blog/2015/06/24/vulnhub-tr0ll-2/</loc>
-    <lastmod>2015-06-24T04:31:06-04:00</lastmod>
+    <lastmod>2015-06-24T18:31:06+10:00</lastmod>
   </url>
   <url>
     <loc>http://f4l13n5n0w.github.io/blog/2015/06/21/vulnhub-knock-knock-1-dot-1/</loc>
-    <lastmod>2015-06-21T04:49:54-04:00</lastmod>
+    <lastmod>2015-06-21T18:49:54+10:00</lastmod>
   </url>
   <url>
     <loc>http://f4l13n5n0w.github.io/blog/2015/06/13/vulnhub-tophatsec-freshly/</loc>
-    <lastmod>2015-06-13T04:57:26-04:00</lastmod>
+    <lastmod>2015-06-13T18:57:26+10:00</lastmod>
   </url>
   <url>
     <loc>http://f4l13n5n0w.github.io/blog/2015/05/31/pentesterlab-php-lfi-and-post-exploitation/</loc>
-    <lastmod>2015-05-31T05:19:10-04:00</lastmod>
+    <lastmod>2015-05-31T19:19:10+10:00</lastmod>
   </url>
   <url>
     <loc>http://f4l13n5n0w.github.io/blog/2015/05/30/pentesterlab-axis2-web-service-and-tomcat-manager/</loc>
-    <lastmod>2015-05-30T08:16:43-04:00</lastmod>
+    <lastmod>2015-05-30T22:16:43+10:00</lastmod>
   </url>
   <url>
     <loc>http://f4l13n5n0w.github.io/blog/2015/05/25/vulnhub-kioptrix-2014/</loc>
-    <lastmod>2015-05-25T00:54:33-04:00</lastmod>
+    <lastmod>2015-05-25T14:54:33+10:00</lastmod>
   </url>
   <url>
     <loc>http://f4l13n5n0w.github.io/blog/2015/05/23/pentesterlab-web-for-pentester-final/</loc>
-    <lastmod>2015-05-23T00:52:14-04:00</lastmod>
+    <lastmod>2015-05-23T14:52:14+10:00</lastmod>
   </url>
   <url>
     <loc>http://f4l13n5n0w.github.io/blog/2015/05/22/pentesterlab-web-for-pentester-sql-injection/</loc>
-    <lastmod>2015-05-22T05:53:28-04:00</lastmod>
+    <lastmod>2015-05-22T19:53:28+10:00</lastmod>
   </url>
   <url>
     <loc>http://f4l13n5n0w.github.io/blog/2015/05/21/pentesterlab-web-for-pentester-xss/</loc>
-    <lastmod>2015-05-21T07:11:45-04:00</lastmod>
+    <lastmod>2015-05-21T21:11:45+10:00</lastmod>
   </url>
   <url>
     <loc>http://f4l13n5n0w.github.io/blog/2015/05/12/pentesterlab-from-sql-to-shell-ii/</loc>
-    <lastmod>2015-05-12T06:33:13-04:00</lastmod>
+    <lastmod>2015-05-12T20:33:13+10:00</lastmod>
   </url>
   <url>
     <loc>http://f4l13n5n0w.github.io/blog/2015/05/09/pentesterlab-play-session-injection/</loc>
-    <lastmod>2015-05-09T07:34:13-04:00</lastmod>
+    <lastmod>2015-05-09T21:34:13+10:00</lastmod>
   </url>
   <url>
     <loc>http://f4l13n5n0w.github.io/blog/2015/05/09/pentesterlab-xss-and-mysql-file/</loc>
-    <lastmod>2015-05-09T01:28:19-04:00</lastmod>
+    <lastmod>2015-05-09T15:28:19+10:00</lastmod>
   </url>
   <url>
     <loc>http://f4l13n5n0w.github.io/blog/2015/05/07/pentesterlab-cve-2014-6271-slash-shellshock/</loc>
-    <lastmod>2015-05-07T07:33:16-04:00</lastmod>
+    <lastmod>2015-05-07T21:33:16+10:00</lastmod>
   </url>
   <url>
     <loc>http://f4l13n5n0w.github.io/blog/2015/05/05/jing-yan-fen-xiang-oscp-shen-tou-ce-shi-ren-zheng/</loc>
-    <lastmod>2015-05-05T06:48:31-04:00</lastmod>
+    <lastmod>2015-05-05T20:48:31+10:00</lastmod>
   </url>
   <url>
     <loc>http://f4l13n5n0w.github.io/</loc>
@@ -165,5 +169,8 @@
   </url>
   <url>
     <loc>http://f4l13n5n0w.github.io/blog/categories/sticky-bit/</loc>
+  </url>
+  <url>
+    <loc>http://f4l13n5n0w.github.io/blog/categories/nullbyte/</loc>
   </url>
 </urlset>
